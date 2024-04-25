@@ -264,6 +264,10 @@ function Path:new(...)
     path_string = path_input
   end
 
+  if path.sep == "\\" then
+    path_string =  string.gsub(path_string, "/", "\\")
+  end
+
   local obj = {
     filename = path_string,
 
